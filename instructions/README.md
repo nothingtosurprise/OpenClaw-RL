@@ -3,6 +3,7 @@
 
 ```bash
 # cuda 12.9 (nvcc -V, nvidia-smi)
+cd OpenClaw-RL
 conda create --name openclaw-rl python=3.12 -y
 conda activate openclaw-rl
  
@@ -12,12 +13,12 @@ pip install \
   torchaudio==2.9.1+cu129 \
   --index-url https://download.pytorch.org/whl/cu129
  
-pip install -r /absolute/path/to/OpenClaw-RL/requirements.txt
+pip install -r requirements.txt
 
-# DeepEP
-pip install -e /absolute/path/DeepEP --no-build-isolation
+# DeepEP: https://github.com/deepseek-ai/DeepEP download first
+pip install -e /path_to/DeepEP --no-build-isolation
 
-pip install -e /absolute/path/to/OpenClaw-RL/slime/slime/backends/megatron_utils/kernels/int4_qat --no-build-isolation
+pip install -e slime/slime/backends/megatron_utils/kernels/int4_qat --no-build-isolation
  
 # apex
 git clone https://github.com/NVIDIA/apex.git
